@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>Streamer_Hub</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TwitchBot\EldenRing Map.png" />
+  </ItemGroup>
+
+	<!-- Quick note: this is where I manually added text to have all the files copied over so this shit can finally work. I might need to add more file extensions in the future if stuff breaks,
+			but for now it seems to be working just fine so I'm leaving it.-->
+  <ItemGroup>
+	  <EmbeddedResource Include="TwitchBot\twitchBotOld.js">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="TwitchBot\node_modules\**\*.js">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="TwitchBot\node_modules\**\*.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="TwitchBot\node_modules\**\*.md">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  
+	  <!--
+	<EmbeddedResource Include="TwitchBot\node_modules\tmi.js\index.js">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</EmbeddedResource>
+	  <EmbeddedResource Include="TwitchBot\node_modules\tmi.js\lib\client.js">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="TwitchBot\node_modules\tmi.js\lib\api.js">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="TwitchBot\node_modules\ws\index.js">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	   -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="TwitchBot\node_modules\.bin\acorn" />
+    <None Include="TwitchBot\node_modules\.bin\acorn.cmd" />
+    <None Include="TwitchBot\node_modules\.bin\acorn.ps1" />
+    <None Include="TwitchBot\node_modules\.bin\eslint" />
+    <None Include="TwitchBot\node_modules\.bin\eslint.cmd" />
+    <None Include="TwitchBot\node_modules\.bin\eslint.ps1" />
+    <None Include="TwitchBot\node_modules\.bin\js-yaml" />
+    <None Include="TwitchBot\node_modules\.bin\js-yaml.cmd" />
+    <None Include="TwitchBot\node_modules\.bin\js-yaml.ps1" />
+    <None Include="TwitchBot\node_modules\.bin\node-which" />
+    <None Include="TwitchBot\node_modules\.bin\node-which.cmd" />
+    <None Include="TwitchBot\node_modules\.bin\node-which.ps1" />
+    <None Include="TwitchBot\node_modules\balanced-match\.github\FUNDING.yml" />
+    <None Include="TwitchBot\node_modules\fast-json-stable-stringify\.github\FUNDING.yml" />
+    <None Include="TwitchBot\node_modules\fastq\.github\dependabot.yml" />
+    <None Include="TwitchBot\node_modules\fastq\.github\workflows\ci.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.JavaScript.NodeApi" Version="0.7.19" />
+    <PackageReference Include="Microsoft.JavaScript.NodeApi.Generator" Version="0.7.19" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="TwitchBot\EldenRing Map.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="TwitchBot\node_modules\tmi.js\index.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

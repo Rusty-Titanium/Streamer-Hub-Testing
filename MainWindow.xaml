@@ -1,0 +1,36 @@
+﻿<Window x:Class="Streamer_Hub.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Streamer_Hub"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" FontSize="18">
+
+    <Window.Resources>
+        
+        
+        
+        
+    </Window.Resources>
+    
+    <Grid>
+
+        <Button Content="Start Bot" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 0 0" Click="Start_Bot_Click"/>
+        <Button Content="Stop Bot" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 50 0 0"  Click="Stop_Bot_Click"/>
+
+        <!-- original. testing internal checking of resources. -->
+        <Image x:Name="imageControl" Source="pack://application:,,,/Streamer Hub;component/TwitchBot/EldenRing Map.png" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="150"/>
+
+        <ScrollViewer Margin="200 0 0 0">
+            <TextBlock x:Name="tBlock" Text="Beans" Background="black" Foreground="White" Padding="6 0 0 0"/>
+        </ScrollViewer>
+        
+        
+
+
+
+
+    </Grid>
+    
+</Window>
